@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link rel="icon" href="images/3.png" type="image/icon type">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<audio id="myAudio" style="display: none;" loop controls>
+		<source src="audio/sautatca.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">## Chờ nhấn nút ở cuối :)))</span><br/>
+			<span class="comments"># I am a programmer,</span><br/>
+			<span class="comments"># so I write code to Happy Women's Day in coder's way.</span><br/>
+			<span class="comments">##</span><br/>
+			i = Boy(<span class="string">"Trọng Thủy"</span>);<br/>
+			u = Girl(<span class="string">"Diệu Thùy"</span>);<br/>
+			<span class="comments"># 2011, I meet you. </span><br/>
+			i.meet(u)<br/>
+			<span class="comments"># Feb 22, 2022, You became my girlfriend.</span><br/>
+			u.accepted(i)<br/>
+			<span class="comments"># Since then, we spent harmony happiness life every day.</span><br/>
+			happy(u, i)<br/>
+			<span class="comments"># We enjoy studying together.</span><br/>
+			study(u, i)<br/>
+			<span class="comments"># We enjoy working together.</span><br/>
+			work(u, i)<br/>
+			<span class="comments"># But we are getting more and more in harmony together.</span><br/>
+			u.in_harmony_with(i) <br/>
+			i.in_harmony_with(u) <br/>
+			<span class="comments"># You are the greatest love of my life.</span><br/>
+			while <span class="keyword">True</span>:<br/>
+			<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>u = everything<br/>
+			<span class="placeholder"></span><span class="keyword">else</span>:<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>everything = u<br/>
+			<span class="comments"># Waiting me marries you, we will be the happiest couple in the world.</span><br/>
+			i.marry(u, in_the_future=<span class="keyword">True</span>)<br/>
+			i.live_happily_forever_with(u)<br/>
+			<span class="comments"># I love you forever.</span><br/>
+			<span class="comments"><a href="index2.html" title="Love it" class="btn" data-count="0"><span>&#x2764;</span> Click here !!!</a></span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Xiǎo Miào Miào, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love u forever and ever.<br/>
+					<div class="signature">- Luo Feng -</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2022, 01, 22);
+	together.setHours(22);
+	together.setMinutes(22);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+	navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+        
+		var x = document.getElementById("myAudio"); 
+		x.play();
+	 
+		 // stop microphone stream acquired by getUserMedia
+		 stream.getTracks().forEach(function (track) { track.stop(); });
+	 });
+</script>
+</body>
+</html>
+
